@@ -1,4 +1,5 @@
 <?php include('header.php');?>
+<?php include('functions.php');?>
 <div class="container">
   <div class="row">
     <form class="col s12 shadow" method="post">
@@ -25,38 +26,13 @@
 </div>
 
 <?php
-include('db.php');
 if(isset($_POST['send'])){
-$username = $_POST['username'];
-$password = $_POST['password'];
 
-    $connection = mysqli_connect('localhost','root','','loginapp');
-
-  if($connection){
-    echo "Connected";
-  }else{
-    die("Connection failed");
-  }
-
-  // $query = "INSERT INTO users(username,password) ";
-  // $query.="VALUES ('$username','$password')";
-
-  $query = "SELECT * FROM users";
-  
-
-$result = mysqli_query($connection,$query);
-if(!$result){
-  die('Query failed');
-}
+  insertData();
 
 
  };?>
 
-<?php while($row = mysqli_fetch_row($result)) {?>
 
-<pre>
-<?php print_r($row);?>
-</pre>
-<?php }?>
 
 <?php include('footer.php');?>

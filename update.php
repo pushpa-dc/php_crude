@@ -22,15 +22,16 @@
 
 
 
-                <button class="btn waves-effect waves-light btn-primary" type="submit" name="update">Update
-                    <i class="material-icons right">send</i>
-                </button>
-
-                <label>Browser Select</label>
+                
                 <select name="id" class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
                     <?php showAllData();?>
                 </select>
+
+                <button class="mt-5 btn waves-effect waves-light btn-primary" type="submit" name="update">Update
+                    <i class="material-icons right">send</i>
+                </button>
+
             </div>
         </div>
 

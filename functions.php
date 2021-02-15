@@ -30,3 +30,37 @@ function  updateData(){
                 die("Query failed".mysqli_error($connection));
             }
 }
+
+function  deleteData(){
+    global $connection;
+    $id = $_POST['id'];
+    $query = "DELETE FROM users WHERE id = ' $id ' ";
+    $result = mysqli_query($connection,$query);
+
+    if($reuslt){
+        die("Query failed".mysqli_error($connection));
+    }
+    echo $query;
+}
+
+
+function insertData(){
+global $connection;
+    $username = $_POST['username'];
+$password = $_POST['password'];
+
+  if($connection){
+    echo "Connected";
+  }else{
+    die("Connection failed");
+  }
+
+  $query = "INSERT INTO users(username,password) ";
+  $query.="VALUES ('$username','$password')";
+  
+
+$result = mysqli_query($connection,$query);
+if($result){
+  die('Query failed');
+}
+}
